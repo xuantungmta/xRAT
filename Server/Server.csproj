@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14CA405B-8BAC-48AB-9FBA-8FB5DF88FD0D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>xServer</RootNamespace>
+    <AssemblyName>xRAT 2</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\Bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>xServer.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Cecil">
+      <HintPath>lib\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Vestris.ResourceLib">
+      <HintPath>lib\Vestris.ResourceLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\MainMenuEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Core\Build\IconInjector.cs" />
+    <Compile Include="Core\Client.cs" />
+    <Compile Include="Core\Build\ClientBuilder.cs" />
+    <Compile Include="Core\Commands\CommandHandler.cs" />
+    <Compile Include="Core\Compression\SafeQuickLZ.cs" />
+    <Compile Include="Core\Encryption\AES.cs" />
+    <Compile Include="Core\Helper\FileSplit.cs" />
+    <Compile Include="Core\Helper\UnsafeStreamCodec.cs" />
+    <Compile Include="Core\Helper\UPnP.cs" />
+    <Compile Include="Core\Misc\InputBox.cs" />
+    <Compile Include="Core\Compression\JpgCompression.cs" />
+    <Compile Include="Core\Misc\ListViewColumnSorter.cs" />
+    <Compile Include="Core\Extensions\ListViewExtensions.cs" />
+    <Compile Include="Core\Misc\SavedVariables.cs" />
+    <Compile Include="Core\Packets\ClientPackets\DesktopResponse.cs" />
+    <Compile Include="Core\Packets\ClientPackets\DirectoryResponse.cs" />
+    <Compile Include="Core\Packets\ClientPackets\DownloadFileResponse.cs" />
+    <Compile Include="Core\Packets\ClientPackets\DrivesResponse.cs" />
+    <Compile Include="Core\Packets\ClientPackets\GetProcessesResponse.cs" />
+    <Compile Include="Core\Packets\ClientPackets\GetStartupItemsResponse.cs" />
+    <Compile Include="Core\Packets\ClientPackets\GetSystemInfoResponse.cs" />
+    <Compile Include="Core\Packets\ClientPackets\MonitorsResponse.cs" />
+    <Compile Include="Core\Packets\ClientPackets\ShellCommandResponse.cs" />
+    <Compile Include="Core\Packets\ClientPackets\UserStatus.cs" />
+    <Compile Include="Core\Packets\ClientPackets\Initialize.cs" />
+    <Compile Include="Core\Packets\ClientPackets\Status.cs" />
+    <Compile Include="Core\Packets\IPacket.cs" />
+    <Compile Include="Core\Packets\ServerPackets\Action.cs" />
+    <Compile Include="Core\Packets\ServerPackets\AddStartupItem.cs" />
+    <Compile Include="Core\Packets\ServerPackets\Delete.cs" />
+    <Compile Include="Core\Packets\ServerPackets\Desktop.cs" />
+    <Compile Include="Core\Packets\ServerPackets\Directory.cs" />
+    <Compile Include="Core\Packets\ServerPackets\Disconnect.cs" />
+    <Compile Include="Core\Packets\ServerPackets\DownloadAndExecute.cs" />
+    <Compile Include="Core\Packets\ServerPackets\DownloadFile.cs" />
+    <Compile Include="Core\Packets\ServerPackets\DownloadFileCanceled.cs" />
+    <Compile Include="Core\Packets\ServerPackets\Drives.cs" />
+    <Compile Include="Core\Packets\ServerPackets\GetProcesses.cs" />
+    <Compile Include="Core\Packets\ServerPackets\GetStartupItems.cs" />
+    <Compile Include="Core\Packets\ServerPackets\GetSystemInfo.cs" />
+    <Compile Include="Core\Packets\ServerPackets\KillProcess.cs" />
+    <Compile Include="Core\Packets\ServerPackets\Monitors.cs" />
+    <Compile Include="Core\Packets\ServerPackets\MouseClick.cs" />
+    <Compile Include="Core\Packets\ServerPackets\Rename.cs" />
+    <Compile Include="Core\Packets\ServerPackets\ShellCommand.cs" />
+    <Compile Include="Core\Packets\ServerPackets\ShowMessageBox.cs" />
+    <Compile Include="Core\Packets\ServerPackets\StartProcess.cs" />
+    <Compile Include="Core\Packets\ServerPackets\Uninstall.cs" />
+    <Compile Include="Core\Packets\ServerPackets\Update.cs" />
+    <Compile Include="Core\Packets\ServerPackets\UploadAndExecute.cs" />
+    <Compile Include="Core\Packets\ServerPackets\VisitWebsite.cs" />
+    <Compile Include="Core\Packets\ServerPackets\InitializeCommand.cs" />
+    <Compile Include="Core\Packets\ServerPackets\Reconnect.cs" />
+    <Compile Include="Core\Packets\UnknownPacket.cs" />
+    <Compile Include="Core\ProtoBuf\BclHelpers.cs" />
+    <Compile Include="Core\ProtoBuf\BufferExtension.cs" />
+    <Compile Include="Core\ProtoBuf\BufferPool.cs" />
+    <Compile Include="Core\ProtoBuf\CallbackAttributes.cs" />
+    <Compile Include="Core\ProtoBuf\DataFormat.cs" />
+    <Compile Include="Core\ProtoBuf\Extensible.cs" />
+    <Compile Include="Core\ProtoBuf\ExtensibleUtil.cs" />
+    <Compile Include="Core\ProtoBuf\GlobalSuppressions.cs" />
+    <Compile Include="Core\ProtoBuf\Helpers.cs" />
+    <Compile Include="Core\ProtoBuf\IExtensible.cs" />
+    <Compile Include="Core\ProtoBuf\IExtension.cs" />
+    <Compile Include="Core\ProtoBuf\ImplicitFields.cs" />
+    <Compile Include="Core\ProtoBuf\KeyValuePairProxy.cs" />
+    <Compile Include="Core\ProtoBuf\Meta\AttributeMap.cs" />
+    <Compile Include="Core\ProtoBuf\Meta\BasicList.cs" />
+    <Compile Include="Core\ProtoBuf\Meta\CallbackSet.cs" />
+    <Compile Include="Core\ProtoBuf\Meta\MetaType.cs" />
+    <Compile Include="Core\ProtoBuf\Meta\RuntimeTypeModel.cs" />
+    <Compile Include="Core\ProtoBuf\Meta\SubType.cs" />
+    <Compile Include="Core\ProtoBuf\Meta\TypeFormatEventArgs.cs" />
+    <Compile Include="Core\ProtoBuf\Meta\TypeModel.cs" />
+    <Compile Include="Core\ProtoBuf\Meta\ValueMember.cs" />
+    <Compile Include="Core\ProtoBuf\NetObjectCache.cs" />
+    <Compile Include="Core\ProtoBuf\PrefixStyle.cs" />
+    <Compile Include="Core\ProtoBuf\ProtoContractAttribute.cs" />
+    <Compile Include="Core\ProtoBuf\ProtoConverterAttribute.cs" />
+    <Compile Include="Core\ProtoBuf\ProtoEnumAttribute.cs" />
+    <Compile Include="Core\ProtoBuf\ProtoException.cs" />
+    <Compile Include="Core\ProtoBuf\ProtoIgnoreAttribute.cs" />
+    <Compile Include="Core\ProtoBuf\ProtoIncludeAttribute.cs" />
+    <Compile Include="Core\ProtoBuf\ProtoMemberAttribute.cs" />
+    <Compile Include="Core\ProtoBuf\ProtoReader.cs" />
+    <Compile Include="Core\ProtoBuf\ProtoWriter.cs" />
+    <Compile Include="Core\ProtoBuf\SerializationContext.cs" />
+    <Compile Include="Core\ProtoBuf\Serializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\ArrayDecorator.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\BlobSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\BooleanSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\ByteSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\CharSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\CompiledSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\DateTimeSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\DecimalSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\DefaultValueDecorator.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\DoubleSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\EnumSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\FieldDecorator.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\GuidSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\ImmutableCollectionDecorator.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\Int16Serializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\Int32Serializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\Int64Serializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\IProtoSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\IProtoTypeSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\ISerializerProxy.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\KeyValuePairDecorator.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\ListDecorator.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\MemberSpecifiedDecorator.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\NetObjectSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\NullDecorator.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\ParseableSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\PropertyDecorator.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\ProtoDecoratorBase.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\SByteSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\SingleSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\StringSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\SubItemSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\SurrogateSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\SystemTypeSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\TagDecorator.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\TimeSpanSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\TupleSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\TypeSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\UInt16Serializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\UInt32Serializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\UInt64Serializer.cs" />
+    <Compile Include="Core\ProtoBuf\Serializers\UriDecorator.cs" />
+    <Compile Include="Core\ProtoBuf\ServiceModel\ProtoBehaviorAttribute.cs" />
+    <Compile Include="Core\ProtoBuf\ServiceModel\ProtoBehaviorExtensionElement.cs" />
+    <Compile Include="Core\ProtoBuf\ServiceModel\ProtoEndpointBehavior.cs" />
+    <Compile Include="Core\ProtoBuf\ServiceModel\ProtoOperationBehavior.cs" />
+    <Compile Include="Core\ProtoBuf\ServiceModel\XmlProtoSerializer.cs" />
+    <Compile Include="Core\ProtoBuf\SubItemToken.cs" />
+    <Compile Include="Core\ProtoBuf\WireType.cs" />
+    <Compile Include="Core\Build\Renamer.cs" />
+    <Compile Include="Core\Server.cs" />
+    <Compile Include="Core\Helper\Helper.cs" />
+    <Compile Include="Core\UserState.cs" />
+    <Compile Include="Forms\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAbout.Designer.cs">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmAddToAutostart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAddToAutostart.Designer.cs">
+      <DependentUpon>FrmAddToAutostart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmBuilder.Designer.cs">
+      <DependentUpon>FrmBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmDownloadAndExecute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmDownloadAndExecute.Designer.cs">
+      <DependentUpon>FrmDownloadAndExecute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmFileManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmFileManager.Designer.cs">
+      <DependentUpon>FrmFileManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ListViewEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRemoteDesktop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRemoteDesktop.Designer.cs">
+      <DependentUpon>FrmRemoteDesktop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRemoteShell.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRemoteShell.Designer.cs">
+      <DependentUpon>FrmRemoteShell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSettings.Designer.cs">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmShowMessagebox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmShowMessagebox.Designer.cs">
+      <DependentUpon>FrmShowMessagebox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmStartupManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmStartupManager.Designer.cs">
+      <DependentUpon>FrmStartupManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmStatistics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmStatistics.Designer.cs">
+      <DependentUpon>FrmStatistics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmSystemInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmSystemInformation.Designer.cs">
+      <DependentUpon>FrmSystemInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTaskManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTaskManager.Designer.cs">
+      <DependentUpon>FrmTaskManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTermsOfUse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTermsOfUse.Designer.cs">
+      <DependentUpon>FrmTermsOfUse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmUploadAndExecute.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmUploadAndExecute.Designer.cs">
+      <DependentUpon>FrmUploadAndExecute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmVisitWebsite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmVisitWebsite.Designer.cs">
+      <DependentUpon>FrmVisitWebsite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmUpdate.Designer.cs">
+      <DependentUpon>FrmUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings\ProfileManager.cs" />
+    <Compile Include="Settings\Settings.cs" />
+    <EmbeddedResource Include="Forms\FrmAbout.resx">
+      <DependentUpon>FrmAbout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmAddToAutostart.resx">
+      <DependentUpon>FrmAddToAutostart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmBuilder.resx">
+      <DependentUpon>FrmBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmDownloadAndExecute.resx">
+      <DependentUpon>FrmDownloadAndExecute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmFileManager.resx">
+      <DependentUpon>FrmFileManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRemoteDesktop.resx">
+      <DependentUpon>FrmRemoteDesktop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRemoteShell.resx">
+      <DependentUpon>FrmRemoteShell.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSettings.resx">
+      <DependentUpon>FrmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmShowMessagebox.resx">
+      <DependentUpon>FrmShowMessagebox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmStartupManager.resx">
+      <DependentUpon>FrmStartupManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmStatistics.resx">
+      <DependentUpon>FrmStatistics.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmSystemInformation.resx">
+      <DependentUpon>FrmSystemInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTaskManager.resx">
+      <DependentUpon>FrmTaskManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTermsOfUse.resx">
+      <DependentUpon>FrmTermsOfUse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmUploadAndExecute.resx">
+      <DependentUpon>FrmUploadAndExecute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmVisitWebsite.resx">
+      <DependentUpon>FrmVisitWebsite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmUpdate.resx">
+      <DependentUpon>FrmUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Core\Extensions\SocketExtensions.cs" />
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="NATUPNPLib">
+      <Guid>{1C565858-F302-471E-B409-F180AA4ABEC6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

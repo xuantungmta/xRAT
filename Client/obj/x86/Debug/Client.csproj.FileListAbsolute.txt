@@ -1,0 +1,8 @@
+C:\Users\admin\Downloads\Compressed\xRAT-master\Bin\Debug\Client.exe
+C:\Users\admin\Downloads\Compressed\xRAT-master\Bin\Debug\Client.pdb
+C:\Users\admin\Downloads\Compressed\xRAT-master\Client\obj\x86\Debug\Client.csprojResolveAssemblyReference.cache
+C:\Users\admin\Downloads\Compressed\xRAT-master\Client\obj\x86\Debug\xClient.Core.Elevation.FrmElevation.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Client\obj\x86\Debug\xClient.Properties.Resources.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Client\obj\x86\Debug\Client.csproj.GenerateResource.Cache
+C:\Users\admin\Downloads\Compressed\xRAT-master\Client\obj\x86\Debug\Client.exe
+C:\Users\admin\Downloads\Compressed\xRAT-master\Client\obj\x86\Debug\Client.pdb

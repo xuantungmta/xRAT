@@ -1,0 +1,28 @@
+C:\Users\admin\Downloads\Compressed\xRAT-master\Bin\Debug\xRAT 2.exe.config
+C:\Users\admin\Downloads\Compressed\xRAT-master\Bin\Debug\xRAT 2.exe
+C:\Users\admin\Downloads\Compressed\xRAT-master\Bin\Debug\xRAT 2.pdb
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\Server.csprojResolveAssemblyReference.cache
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\Interop.NATUPNPLib.dll
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\Server.csproj.ResolveComReference.cache
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmAbout.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmAddToAutostart.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmBuilder.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmDownloadAndExecute.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmFileManager.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmMain.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmRemoteDesktop.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmRemoteShell.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmSettings.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmShowMessagebox.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmStartupManager.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmStatistics.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmSystemInformation.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmTaskManager.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmTermsOfUse.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmUploadAndExecute.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmVisitWebsite.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Forms.FrmUpdate.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xServer.Properties.Resources.resources
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\Server.csproj.GenerateResource.Cache
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xRAT 2.exe
+C:\Users\admin\Downloads\Compressed\xRAT-master\Server\obj\x86\Debug\xRAT 2.pdb
